@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Bware of cookies playground</title>
+  </head>
+  <body>
+    <template id="bware-of-cookies-template">
+      <style>
+        .boc {
+          background-color: blue;
+          color: white;
+        }
+        .boc__slot {}
+        .boc__btnwrapper {}
+      </style>
+      <div class="boc">
+        <slot>Default text</slot>
+      </div>
+    </template>
+    <h1>Playground to kickstart development of the Bware of cookies Webcomponent</h1>
+    <bware-of-cookies>There will be Cookies</bware-of-cookies>
+    <script src="index.js" charset="utf-8"></script>
+  </body>
+</html>
