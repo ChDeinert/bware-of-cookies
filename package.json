@@ -1,0 +1,23 @@
+{
+  "name": "bware-of-cookies",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "browser-sync -sw",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChDeinert/bware-of-cookies.git"
+  },
+  "author": "Christian Deinert <ChDeinert@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ChDeinert/bware-of-cookies/issues"
+  },
+  "homepage": "https://github.com/ChDeinert/bware-of-cookies#readme",
+  "devDependencies": {
+    "browser-sync": "^2.24.6"
+  }
+}
