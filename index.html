@@ -1,52 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Bware of cookies playground</title>
-  </head>
-  <body>
-    <template id="bware-of-cookies-template">
-      <style>
-        .boc {
-          box-sizing: border-box;
-          position: fixed;
-          bottom: 0;
-          left: 0;
-          width: 100%;
-          padding: 1rem;
-          box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.25);
-          background: rgba(255, 255, 255, 0.75);
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: space-between;
-        }
-        .boc--hidden {
-          display: none;
-        }
-        .boc__slot {}
-        .boc__btnwrapper {}
-      </style>
-      <div class="boc">
-        <div class="boc__slot">
-          <slot>Default text</slot>
-        </div>
-        <div class="boc__btnwrapper">
-          <button class="boc__btn">OK</button>
-        </div>
-      </div>
-    </template>
-    <h1>Playground to kickstart development of the Bware of cookies Webcomponent</h1>
-    <bware-of-cookies>There will be Cookies</bware-of-cookies>
-    <script src="index.js" charset="utf-8"></script>
-    <script type="text/javascript">
-      document.addEventListener("DOMContentLoaded", () => {
-        document.addEventListener('boc-accept', () => {
-          const element = document.createElement('p');
-          element.innerText = 'The user is aware of the cookies';
-          document.querySelector('body').appendChild(element)
-        });
-      });
-    </script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>Bware of cookies playground</title>
+  <script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js" charset="utf-8"></script>
+</head>
+<body>
+  <h1>Playground to kickstart development of the Bware of cookies Webcomponent</h1>
+
+  <bware-of-cookies data-button-text="I understand">
+    This side is using delicious cookies! More info about it can be found in our <a href="#">privacy policy</a>.
+  </bware-of-cookies>
+
+  <script src="src/index.js" charset="utf-8" async></script>
+  <script type="text/javascript">
+    document.addEventListener('boc-accept', () => {
+      const element = document.createElement('p');
+      element.innerText = 'The user is aware of the cookies';
+      document.querySelector('body').appendChild(element)
+    });
+  </script>
+</body>
+
 </html>
