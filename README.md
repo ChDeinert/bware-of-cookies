@@ -2,6 +2,10 @@
 
 Customizeable Webcomponent to inform your users about cookies on your website.
 
+**This project has no tests!
+I built it to gain a bit more confidence with custom elements.
+Usage in Production Systems at your own risk!**
+
 ## Requirements
 
 Since this is a Webcomponent, a technology which isn't fully supported in all browsers by now (See [here](https://caniuse.com/#feat=custom-elementsv1)),
@@ -53,4 +57,21 @@ Example event handler
 </script>
 ```
 
+## Customization
+
+Most parts of the Webcomponent are not styled. You can add your own styles by adding css-styles for following classes:
+
+- `.boc__slot`: The container which will contain the info text
+- `.boc__btnwrapper`: A Wrapper div containing the Button for the users' acknowledgement
+- `.boc__btn`: The Button for the users' acknowledgement
+
+Following classes already contain some styling, that could be overwritten:
+
+- `.boc`: The area / element that contains everything else
+- `.boc--hide`: A modifier class to hide the element. Get's appended on button-click
+
 ## Development
+
+To make development a little bit more comfortable you can use BrowserSync.
+Its usage is already prepared. To start it simply run `npm start`.
+Your Browser will open automatically and reload on any change.
