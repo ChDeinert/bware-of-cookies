@@ -3,7 +3,6 @@ customElements.define(
   class extends HTMLElement {
     constructor() {
       super();
-
       const buttonText = this.getAttribute('data-button-text') || 'OK';
 
       const wrapperTemplate = document.createElement('template');
@@ -22,29 +21,39 @@ customElements.define(
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
+            transition: transform 750ms ease-in, opacity 750ms ease-in, visibility 0s 750ms;
           }
-          .boc--hidden {
-            display: none;
+          .boc--hide {
+            transform: translate3d(0, 100%, 0);
+            opacity: 0;
+            visibility: hidden;
           }
-          .boc__slot {}
-          .boc__btnwrapper {}
+          .boc__slot {
+            box-sizing: border-box;
+          }
+          .boc__btnwrapper {
+            box-sizing: border-box;
+          }
+          .box__btn {
+            box-sizing: border-box;
+          }
         </style>
         <div class="boc">
           <div class="boc__slot">
             <slot>Default text</slot>
           </div>
           <div class="boc__btnwrapper">
-            <button id="boc-accept-button" class="boc__btn">
+            <button id="boc-acknowledge-button" class="boc__btn">
               ${buttonText}
             </button>
           </div>
         </div>
       `;
 
-      this.acknowledgedEvent = new CustomEvent('boc-accept', { bubbles: true });
+      this.acknowledgedEvent = new CustomEvent('boc-acknowledge', { bubbles: true });
 
       this.clickHandler = (event) => {
-        this.shadowRoot.querySelector('.boc').className += ' boc--hidden';
+        this.shadowRoot.querySelector('.boc').className += ' boc--hide';
         this.dispatchEvent(this.acknowledgedEvent);
       };
 
@@ -54,7 +63,7 @@ customElements.define(
     }
 
     connectedCallback() {
-      const button = this.shadowRoot.querySelector('#boc-accept-button');
+      const button = this.shadowRoot.querySelector('#boc-acknowledge-button');
       button.addEventListener('click', this.clickHandler);
     }
   }
