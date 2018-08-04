@@ -1,6 +1,6 @@
 {
   "name": "bware-of-cookies",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Webcomponent to inform your users about cookies on your website",
   "main": "src/index.js",
   "scripts": {

@@ -53,6 +53,4 @@ Example event handler
 </script>
 ```
 
-## Why a webcomponent?
-
 ## Development
